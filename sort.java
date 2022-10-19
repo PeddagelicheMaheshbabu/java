@@ -1,27 +1,38 @@
-import java.util.*;
-class descending {
-    public static void main(String[] args) {
-try{
-        System.out.println("Enter the word");
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter a String : ");
-        String str = scanner.nextLine();
-        char[] ch = str.toCharArray();
-        for (int i = 0; i < ch.length; i++) {
-            for (int j = i + 1; j < ch.length; j++) {
-                
-                if (Character.toLowerCase(ch[j]) > Character.toLowerCase(ch[i])) {
-                    char temp = ch[i];
-                    ch[i] = ch[j];
-                    ch[j] = temp;
-                }
-            }
-        }
-        System.out.println("String after sorting character in REVERSE order");
-        System.out.println(String.valueOf(ch));
-    }
-catch(Exception e){
-System.out.println("invalid input");
-}
-}
-}
+import java.util.Arrays;  
+import java.util.Scanner;
+
+ class sort
+{  
+   public static void main(String args[])   
+   {  
+      Scanner sc=new Scanner(System.in);
+      int n;  
+      System.out.println("Enter the number of elements ");
+      n=sc.nextInt();    
+
+      String country[]=new String[n];
+      System.out.println("Enter the String ");
+      Scanner sc1=new Scanner(System.in);    
+      for(int i=0; i<n ;i++)
+      {
+          country[i]=sc1.nextLine();
+      }
+     
+         for(int i = 0; i<n; i++)
+         {  
+             for (int j = i+1; j<n; j++) 
+             {  
+              
+                if(country[i].compareTo(country[j])>0)   
+                {  
+                    
+                    String temp = country[i];  
+                    country[i] = country[j];  
+                    country[j] = temp;  
+                 }  
+              }  
+           }  
+ 
+           System.out.println(Arrays.toString(country));  
+       }  
+}  
